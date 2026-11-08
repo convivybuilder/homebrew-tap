@@ -1,8 +1,8 @@
 class Builder < Formula
   desc "Build software with a crew of AI agents"
   homepage "https://convivybuilder.org"
-  url "https://github.com/convivybuilder/shipwright/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "b705b467448ae025368ef1576ab6ecc377c9522762ca8bb388e940dfa686f0f8"
+  url "https://github.com/convivybuilder/shipwright/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "cac2bfc936b4dd812ad61991647274d307cf705bab3fd54cdbead34bced9433a"
   license "Apache-2.0"
 
   depends_on "python@3.11"
