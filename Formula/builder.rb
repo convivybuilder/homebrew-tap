@@ -40,6 +40,9 @@ class Builder < Formula
     assert_match "BAKED_RELEASE=\"#{version}\"", (bin/"builder-install").read
     # The whole assignment, since the script's own check compares against the bare placeholder.
     refute_match "BAKED_RELEASE_SIGNERS='@RELEASE_SIGNERS@'", (bin/"builder-install").read
+    # And what replaced it is a trust list: at least one key line, in the
+    # allowed-signers form the release check passes to ssh-keygen.
+    assert_match(/^release@convivy namespaces="builder-release" \S+ AAAA/, (bin/"builder-install").read)
     system "/bin/sh", "-n", bin/"builder-install"
     assert_match "usage: builder-install", shell_output("#{bin}/builder-install --help 2>&1")
   end
